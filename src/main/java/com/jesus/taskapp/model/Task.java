@@ -1,14 +1,16 @@
 package com.jesus.taskapp.model;
 
-import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.time.LocalDate;
 
-public class Tasks {
+public class Task {
     private int id;
     private String name;
     private String description;
-    private Date startDate;
 
-    // Getters y Setters
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private LocalDate startDate;
+
     public int getId() {
         return id;
     }
@@ -33,11 +35,11 @@ public class Tasks {
         this.description = description;
     }
 
-    public Date getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(LocalDate startDate) {
         this.startDate = startDate;
     }
 }
